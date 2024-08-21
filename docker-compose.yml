@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  helloserver:
+    image: acim/go-reflex
+    environment:
+      - RACE_DETECTOR=1
+    volumes:
+      - ./helloserver:/app
+    ports:
+      - 3000:3000
+
+  namegenerator:
+    image: acim/go-reflex
+    environment:
+      - RACE_DETECTOR=1
+    volumes:
+      - ./name-generator:/app
+    ports:
+      - 4000:3000
